@@ -1,0 +1,244 @@
+/* Basic reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #050608;
+  color: #f5f5f5;
+}
+
+/* Layout wrapper */
+.docs-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.docs-sidebar {
+  width: 260px;
+  padding: 24px 20px 32px;
+  background: #050608;
+  border-right: 1px solid #111827;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.docs-logo {
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.docs-subtitle {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 16px;
+}
+
+/* Sidebar nav */
+.docs-nav-section-title {
+  margin-top: 16px;
+  margin-bottom: 4px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+.docs-nav {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.docs-nav li {
+  margin: 2px 0;
+}
+
+.docs-nav a {
+  display: block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #e5e7eb;
+  text-decoration: none;
+}
+
+.docs-nav a:hover {
+  background: #111827;
+}
+
+.docs-nav a.active {
+  background: rgba(15,155,142,0.18); /* translucent RTNC green */
+  border-left: 3px solid #0f9b8e;   /* solid RTNC green */
+  color: #ffffff;
+}
+
+/* Sidebar footer text */
+.docs-meta {
+  font-size: 11px;
+  color: #6b7280;
+  margin-top: 16px;
+}
+
+/* Main content area */
+.docs-main {
+  flex: 1;
+  padding: 32px 40px 64px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Header */
+.docs-main-header h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.docs-main-header p {
+  margin: 0 0 24px;
+  color: #9ca3af;
+}
+
+/* Sections */
+section {
+  margin-bottom: 32px;
+}
+
+section h2 {
+  font-size: 20px;
+  margin: 0 0 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #111827;
+}
+
+section h3 {
+  font-size: 16px;
+  margin: 16px 0 4px;
+}
+
+/* Lists and text */
+p {
+  line-height: 1.6;
+  margin: 0 0 8px;
+}
+
+ul, ol {
+  padding-left: 1.3rem;
+  margin: 4px 0 12px;
+}
+
+/* Code blocks */
+pre {
+  background: #111827;
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  overflow-x: auto;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+/* ===== RTNC HERO LAYOUT ===== */
+.hero-section {
+  padding: 3rem 0;
+}
+
+.hero-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* left column */
+.hero-copy {
+  max-width: 700px;
+}
+
+/* right column */
+.hero-coin-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* coin circle */
+.hero-coin-circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 20%, #ffffff, #b8b8b8 30%, #444 70%, #111 100%);
+  box-shadow: 0 0 40px rgba(16, 185, 129, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-coin-circle-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #a7f3d0; /* emerald-ish */
+}
+
+/* metadata card under coin */
+.hero-coin-meta {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0.75rem 1rem;
+}
+
+.hero-coin-meta-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #9ca3af; /* slate-400 */
+  margin-bottom: 0.25rem;
+}
+
+.hero-coin-meta-address {
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.7rem;
+  color: #6ee7b7; /* emerald-300 */
+  word-break: break-all;
+}
+
+.hero-coin-meta-caption {
+  margin-top: 0.4rem;
+  font-size: 0.7rem;
+  color: #9ca3af;
+  line-height: 1.3;
+}
+
+/* desktop layout */
+@media (min-width: 900px) {
+  .hero-layout {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hero-copy {
+    flex: 1 1 60%;
+  }
+
+  .hero-coin-wrap {
+    flex: 0 0 260px;
+    align-items: flex-end;
+  }
+}

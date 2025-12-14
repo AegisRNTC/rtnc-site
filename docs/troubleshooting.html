@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>RTNC Troubleshooting Guide</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="docs.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="docs-wrapper">
+<aside class="docs-sidebar">
+<div class="docs-logo">RTNC</div>
+<div class="docs-subtitle">Retinecy Network Coin – Documentation</div>
+<div class="docs-nav-section-title">Core Docs</div>
+<ul class="docs-nav">
+<li><a href="whitepaper.html">Whitepaper</a></li>
+<li><a href="mining.html">Mining Paper</a></li>
+<li><a href="governance.html">Governance Charter</a></li>
+<li><a href="bylaws.html">Foundation Bylaws</a></li>
+</ul>
+<div class="docs-nav-section-title">Guides</div>
+<ul class="docs-nav">
+<li><a href="node-mining-quickstart.html">Node &amp; Mining Quickstart</a></li>
+<li><a href="testnet-setup.html">Testnet &amp; Regtest Setup</a></li>
+</ul>
+<div class="docs-nav-section-title">Resources</div>
+<ul class="docs-nav">
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="glossary.html">Glossary</a></li>
+<li><a href="dev-overview.html">Developer Overview</a></li>
+<li><a href="architecture.html">Architecture</a></li>
+<li><a class="active" href="troubleshooting.html">Troubleshooting</a></li>
+<li><a href="downloads.html">Downloads</a></li>
+</ul>
+<div class="docs-nav-section-title">Navigation</div>
+<ul class="docs-nav">
+<li><a href="index.html">Docs Home</a></li>
+<li><a href="../index.html">← Back to Main Site</a></li>
+</ul>
+<p class="docs-meta">
+        RTNC Troubleshooting • Common issues and where to look.
+      </p>
+</aside>
+<main class="docs-main">
+
+
+
+
+
+
+
+
+
+<p>RTNC Troubleshooting Guide</p><p>Common node and mining issues, with pointers on where to look first.</p><section><h2>1. Node Will Not Start</h2><p>Symptoms:</p><p>RTNC Core exits immediately or shows an error dialog.</p><p>Check:</p><p>debug.log</p><p>in your RTNC data directory.</p><p>Disk space (are you out of space?).</p><p>File permissions on the data directory.</p></section><section><h2>2. Node Cannot Connect to Peers</h2><p>Symptoms:</p><p>Zero peers, chain not syncing.</p><p>Check:</p><p>Is your firewall blocking outgoing connections?</p><p>Are you accidentally running with regtest/testnet flags when you meant mainnet?</p><p>Use</p><p>rtnc-cli getnetworkinfo</p><p>to see connection details.</p></section><section><h2>3. Node Stuck Syncing</h2><p>Symptoms:</p><p>Progress bar or block height does not move.</p><p>Check:</p><p>Network connectivity (Wi-Fi drop, router issues).</p><p>Disk I/O (slow or failing drive).</p><p>debug.log</p><p>for repeated error messages.</p></section><section><h2>4. Wallet Not Showing Expected Balance</h2><p>Symptoms:</p><p>You received RTNC but wallet shows zero.</p><p>Check:</p><p>Is your node fully synced to the latest block?</p><p>Did you restore the correct wallet or seed?</p><p>Verify the transaction in an explorer once one exists.</p></section><section><h2>5. Mining Does Nothing</h2><p>Symptoms:</p><p>Miner runs but no blocks found, no block results.</p><p>Check:</p><p>Are you on mainnet, testnet, or regtest? Regtest is best for “instant results”.</p><p>Is your hashrate extremely low compared to network difficulty?</p><p>Is your miner actually connected to your node’s RPC or to a valid pool?</p></section><section><h2>6. RPC Errors</h2><p>Symptoms:</p><p>Commands like</p><p>rtnc-cli getblockchaininfo</p><p>fail.</p><p>Check:</p><p>Is the node running with</p><p>server=1</p><p>in</p><p>rtnc.conf</p><p>?</p><p>Is the CLI pointed at the right data directory or network (mainnet/testnet/regtest)?</p><p>Are RPC user/password and port correct?</p></section><section><h2>7. Regtest or Testnet Confusion</h2><p>Symptoms:</p><p>Balances differ, block heights do not match expectations.</p><p>Check:</p><p>Use</p><p>getblockchaininfo</p><p>and look for</p><p>"chain"</p><p>field.</p><p>Do not reuse the same wallet files between mainnet and test networks.</p></section><section><h2>8. Where to Look for More Detail</h2><p>Log files:</p><p>Usually the first and best source of truth.</p><p>Command help:</p><p>rtnc-cli help</p><p>and</p><p>rtnc-cli help &lt;command&gt;</p><p>.</p><p>Docs:</p><p>Node &amp; Mining Quickstart, Testnet Setup, and Developer Overview.</p></section></main>
+</div>
+</body>
+</html>

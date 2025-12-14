@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RTNC Developer Overview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="docs.css" />
+</head>
+
+<body>
+  <div class="docs-wrapper">
+
+    <aside class="docs-sidebar">
+      <div class="docs-logo">RTNC</div>
+      <div class="docs-subtitle">Retinecy Network – Documentation</div>
+
+      <div class="docs-nav-section-title">Core Docs</div>
+      <ul class="docs-nav">
+        <li><a href="whitepaper.html">Whitepaper</a></li>
+        <li><a href="mining.html">Mining Paper</a></li>
+        <li><a href="governance.html">Governance Charter</a></li>
+        <li><a href="bylaws.html">Foundation Bylaws</a></li>
+      </ul>
+
+      <div class="docs-nav-section-title">Guides</div>
+      <ul class="docs-nav">
+        <li><a href="node-mining-quickstart.html">Node & Mining Quickstart</a></li>
+        <li><a href="testnet-setup.html">Testnet & Regtest Setup</a></li>
+      </ul>
+
+      <div class="docs-nav-section-title">Resources</div>
+      <ul class="docs-nav">
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="dev-overview.html" class="active">Developer Overview</a></li>
+        <li><a href="architecture.html">Architecture</a></li>
+        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+      </ul>
+
+      <div class="docs-nav-section-title">Navigation</div>
+      <ul class="docs-nav">
+        <li><a href="index.html">Docs Home</a></li>
+        <li><a href="../index.html">← Back to Main Site</a></li>
+      </ul>
+
+      <p class="docs-meta">
+        RTNC Developer Overview • High-level concepts for tools, services, and integrations.
+      </p>
+    </aside>
+
+    <main class="docs-main">
+
+      <header class="docs-main-header">
+        <h1>RTNC Developer Overview</h1>
+        <p>Key concepts for building tools, services, and integrations around RTNC nodes.</p>
+      </header>
+
+      <section>
+        <h2>1. Philosophy for Developers</h2>
+        <p>
+          RTNC is designed for straightforward integration: standard JSON-RPC, predictable behavior, and minimal protocol
+          complexity. The goal is to let developers focus on real applications without protocol-level gimmicks or unnecessary
+          economic constructs.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Node Interfaces</h2>
+        <p>Developers typically interact with RTNC in three ways:</p>
+        <ul>
+          <li>JSON-RPC over HTTP (local, authenticated).</li>
+          <li>Command-line interface (<code>rtnc-cli</code> or equivalent).</li>
+          <li>Reading blockchain data from local storage or indexers.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. Example JSON-RPC Calls</h2>
+        <p>Exact method names may follow the standard UTXO-based patterns. Examples:</p>
+        <pre><code># Get general blockchain info
+rtnc-cli getblockchaininfo
+
+# Get network info
+rtnc-cli getnetworkinfo
+
+# Get wallet info
+rtnc-cli getwalletinfo
+
+# Send a transaction
+rtnc-cli sendtoaddress &lt;address&gt; &lt;amount&gt;</code></pre>
+        <p>
+          Always consult the official RTNC Core help output (<code>rtnc-cli help</code>) once binaries are available.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Wallet and Address Handling</h2>
+        <p>
+          RTNC uses public/private key pairs and UTXO-style addresses. Developers should never store raw private keys in logs,
+          analytics systems, or third-party services.
+        </p>
+        <p>Common patterns:</p>
+        <ul>
+          <li>Generate addresses on a secure node.</li>
+          <li>Use RPC to monitor balances and activity.</li>
+          <li>Maintain encrypted wallet backups in secure storage.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>5. Indexing and Explorers</h2>
+        <p>
+          For explorers, dashboards, or analytics tools, developers often maintain indexed blockchain views:
+        </p>
+        <ul>
+          <li>Enable <code>txindex=1</code> in <code>rtnc.conf</code> for full transaction indexing.</li>
+          <li>Parse blocks directly or via RPC into a database (e.g., PostgreSQL).</li>
+          <li>Expose higher-level APIs to web or mobile clients.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>6. Testnet and Regtest for Development</h2>
+        <p>All experimentation should begin on non-production networks:</p>
+        <ul>
+          <li>Testnet for multi-node, public-like behavior.</li>
+          <li>Regtest for rapid, scriptable edge-case testing.</li>
+        </ul>
+        <p>See the <a href="testnet-setup.html">Testnet & Regtest Setup</a> guide for details.</p>
+      </section>
+
+      <section>
+        <h2>7. Security Considerations</h2>
+        <ul>
+          <li>Never expose RPC ports directly to the internet.</li>
+          <li>Use strong, unique RPC credentials.</li>
+          <li>Harden nodes intended for production environments.</li>
+          <li>
+            Assume mainnet behavior reflects real, irreversible protocol outcomes; test thoroughly on non-production
+            networks first to avoid unintended transactions or misuse.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>8. Licensing and Contributions</h2>
+        <p>
+          RTNC Core will specify an open-source license (e.g., MIT-style). Developers are encouraged to contribute
+          documentation, patches, and tools through public repositories following contribution guidelines.
+        </p>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RTNC Architecture</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="docs.css" />
+</head>
+<body>
+  <div class="docs-wrapper">
+    <aside class="docs-sidebar">
+      <div class="docs-logo">RTNC</div>
+      <div class="docs-subtitle">Retinecy Network Coin – Documentation</div>
+
+      <div class="docs-nav-section-title">Core Docs</div>
+      <ul class="docs-nav">
+        <li><a href="whitepaper.html">Whitepaper</a></li>
+        <li><a href="mining.html">Mining Paper</a></li>
+        <li><a href="governance.html">Governance Charter</a></li>
+        <li><a href="bylaws.html">Foundation Bylaws</a></li>
+      </ul>
+
+      <div class="docs-nav-section-title">Guides</div>
+      <ul class="docs-nav">
+        <li><a href="node-mining-quickstart.html">Node &amp; Mining Quickstart</a></li>
+        <li><a href="testnet-setup.html">Testnet &amp; Regtest Setup</a></li>
+      </ul>
+
+      <div class="docs-nav-section-title">Resources</div>
+      <ul class="docs-nav">
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="dev-overview.html">Developer Overview</a></li>
+        <li><a href="architecture.html" class="active">Architecture</a></li>
+        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+      </ul>
+
+      <div class="docs-nav-section-title">Navigation</div>
+      <ul class="docs-nav">
+        <li><a href="index.html">Docs Home</a></li>
+        <li><a href="../index.html">← Back to Main Site</a></li>
+      </ul>
+
+      <p class="docs-meta">
+        RTNC Architecture • High-level view of how the system fits together.
+      </p>
+    </aside>
+
+    <main class="docs-main">
+      <header class="docs-main-header">
+        <h1>RTNC Architecture</h1>
+        <p>Layers, components, and data flow in the RTNC system.</p>
+      </header>
+
+      <section>
+        <h2>1. Layered Model</h2>
+        <p>
+          RTNC can be thought of as a layered system:
+        </p>
+        <ul>
+          <li><strong>Layer 0:</strong> Consensus &amp; base rules (PoW, emission, validation).</li>
+          <li><strong>Layer 1:</strong> Core network (P2P, block propagation, mempool).</li>
+          <li><strong>Layer 2:</strong> Transparency stack (explorers, metrics, dashboards).</li>
+          <li><strong>Layer 3:</strong> Ecosystem tools (wallets, merchant apps, research tools).</li>
+          <li><strong>Layer 4:</strong> Governance &amp; Foundation (documentation and coordination only).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>2. Data Flow</h2>
+        <p>
+          At a high level:
+        </p>
+        <ol>
+          <li>Users construct transactions in wallets.</li>
+          <li>Transactions are broadcast to nodes and stored in mempools.</li>
+          <li>Miners select transactions from their mempools when building new blocks.</li>
+          <li>New blocks are propagated across the peer-to-peer network.</li>
+          <li>Nodes validate and append blocks to their local chain if valid.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>3. Component Overview</h2>
+        <ul>
+          <li><strong>RTNC Core:</strong> The reference node and wallet implementation.</li>
+          <li><strong>Miners:</strong> Nodes (or external processes) performing proof-of-work.</li>
+          <li><strong>Explorers:</strong> Web tools for viewing blocks, transactions, and metrics.</li>
+          <li><strong>Wallets:</strong> Software for managing keys and constructing transactions.</li>
+          <li><strong>Foundation:</strong> Non-profit coordinating docs, infra, and audits.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>4. Example Text Diagram</h2>
+        <pre><code>[ Users & Wallets ]
+         |
+         v
+[ RTNC Nodes ] &lt;--&gt; [ RTNC Nodes ]  (P2P network)
+         |
+         v
+     [ Miners ]
+         |
+         v
+   [ Blockchain ]
+         |
+         v
+[ Explorers / Tools ]</code></pre>
+        <p>
+          This diagram is intentionally simple. It shows the flow of transactions from users, through nodes and miners,
+          into the blockchain, and finally into transparency tools.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Extensibility</h2>
+        <p>
+          Because RTNC tries to keep the base protocol simple, most complexity is pushed outward to optional tools:
+        </p>
+        <ul>
+          <li>Indexers and analytics services.</li>
+          <li>Custom wallets for specific user groups.</li>
+          <li>Research dashboards or regulatory viewers.</li>
+        </ul>
+        <p>
+          These can evolve without needing to change Layer 0 or Layer 1 rules.
+        </p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

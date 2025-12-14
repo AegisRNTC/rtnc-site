@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>RTNC Mining Paper v1.0</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="docs.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="docs-wrapper">
+
+<aside class="docs-sidebar">
+<div class="docs-logo">RTNC</div>
+<div class="docs-subtitle">Retinecy Network – Documentation</div>
+<div class="docs-nav-section-title">Core Docs</div>
+<ul class="docs-nav">
+<li><a href="whitepaper.html">Whitepaper</a></li>
+<li><a class="active" href="mining.html">Mining Paper</a></li>
+<li><a href="governance.html">Governance Charter</a></li>
+<li><a href="bylaws.html">Foundation Bylaws</a></li>
+</ul>
+<div class="docs-nav-section-title">Guides</div>
+<ul class="docs-nav">
+<li><a href="node-mining-quickstart.html">Node &amp; Mining Quickstart</a></li>
+<li><a href="testnet-setup.html">Testnet &amp; Regtest Setup</a></li>
+<li><a href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<div class="docs-nav-section-title">Reference</div>
+<ul class="docs-nav">
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="glossary.html">Glossary</a></li>
+<li><a href="dev-overview.html">Developer Overview</a></li>
+<li><a href="architecture.html">Architecture</a></li>
+<li><a href="downloads.html">Downloads</a></li>
+</ul>
+<div class="docs-nav-section-title">Navigation</div>
+<ul class="docs-nav">
+<li><a href="index.html">Docs Home</a></li>
+<li><a href="../index.html">← Back to Main Site</a></li>
+</ul>
+<p class="docs-meta">
+    RTNC Core Documentation • Non-financial, protocol and governance references.
+  </p>
+</aside>
+
+<main class="docs-main">
+<header class="docs-main-header">
+<h1>RTNC Mining Paper v1.0</h1>
+<p>Proof-of-work mining model, emission behavior, and phased hardware progression for RTNC.</p>
+</header>
+<section>
+<h2>1. Overview</h2>
+<p>
+          Mining is the process that secures the RTNC network, validates transactions, and introduces new RTNC into
+          circulation. Miners perform proof-of-work computations to build blocks, and in return they receive block
+          rewards and transaction fees. There are no staking rewards, no protocol-managed yield, and no embedded
+          financial schemes within mining.
+        </p>
+</section>
+<section>
+<h2>2. Mining Philosophy</h2>
+<p>
+          RTNC mining is built around three principles: fairness, predictability, and long-term security. The protocol
+          is designed so that early participation is not restricted to wealthy or industrial players, and long-term
+          security is achieved without sacrificing legal simplicity.
+        </p>
+<h3>2.1 Fairness First</h3>
+<p>
+          Mining begins in a CPU-friendly phase to give more people a realistic chance to participate using existing
+          hardware. There is no private mining window and no hidden testnet-to-mainnet advantage.
+        </p>
+<h3>2.2 Predictability</h3>
+<p>
+          The emission curve, block timing, and difficulty adjustment rules are defined in advance and not subject to
+          governance intervention. This prevents arbitrary changes that could advantage a subset of miners.
+        </p>
+<h3>2.3 Security Through Progression</h3>
+<p>
+          Over time, RTNC anticipates a natural evolution from CPU miners to GPU miners and eventually ASIC miners.
+          Rather than fight this progression, the protocol is designed to handle it cleanly, preserving security while
+          keeping the rules stable.
+        </p>
+</section>
+<section>
+<h2>3. Consensus and Block Production</h2>
+<p>
+          RTNC uses proof-of-work with a ten-minute target block time. Each block contains a set of validated
+          transactions and a coinbase transaction that pays the mining reward to the block creator.
+        </p>
+<p>
+          Nodes verify blocks by checking the proof-of-work, ensuring that all transactions are valid, and confirming
+          that the block extends the current best chain. The canonical chain is the one with the most cumulative
+          proof-of-work.
+        </p>
+</section>
+<section>
+<h2>4. Difficulty Adjustment</h2>
+<p>
+          To keep the average block time near ten minutes, RTNC adjusts mining difficulty based on how quickly blocks
+          are being found. If blocks are coming too fast, difficulty rises; if they are too slow, difficulty drops.
+        </p>
+<p>
+          Difficulty adjustment is automatic and algorithmic. Neither miners, governance participants, nor the
+          foundation can manually set or override difficulty.
+        </p>
+</section>
+<section>
+<h2>5. Emission Model</h2>
+<p>
+          RTNC has a fixed maximum supply of 10,000,000,000 RTNC. New coins are created only through block rewards, and
+          those rewards follow a pre-defined schedule that decays smoothly over time rather than via abrupt halving
+          events. This provides a more predictable environment for miners.
+        </p>
+<p>
+          There are no mechanisms to pause, accelerate, or “re-mint” emission. Once the maximum supply is reached, no
+          further coins are created.
+        </p>
+</section>
+<section>
+<h2>6. Mining Phases</h2>
+<p>
+          RTNC’s mining lifecycle can be understood as three overlapping phases:
+        </p>
+<ul>
+<li><strong>Phase 1:</strong> CPU-focused early mining.</li>
+<li><strong>Phase 2:</strong> GPU-dominant growth period.</li>
+<li><strong>Phase 3:</strong> Potential ASIC-dominated long-term security.</li>
+</ul>
+<h3>6.1 CPU Phase</h3>
+<p>
+          At launch, the proof-of-work function and difficulty parameters are tuned so that CPU mining is viable. This
+          phase is expected to last roughly eighteen months, though real-world mining behavior will determine the exact
+          dynamics. The goal is broad distribution and low barrier to entry.
+        </p>
+<h3>6.2 GPU Phase</h3>
+<p>
+          As the network matures, GPU miners naturally gain dominance due to higher hash rates and efficiency. This
+          phase improves chain security while still allowing smaller operations to participate if they choose to invest
+          in consumer GPU hardware.
+        </p>
+<h3>6.3 ASIC Phase</h3>
+<p>
+          In the long term, dedicated ASIC hardware may be developed for RTNC. If this occurs, the chain benefits from
+          the same kind of industrial-strength security seen in other large proof-of-work networks. The protocol does
+          not artificially block this progression; it simply remains neutral.
+        </p>
+</section>
+<section>
+<h2>7. Hardware and Participation</h2>
+<p>
+          The protocol does not dictate what hardware miners should use, nor does it require them to purchase any
+          particular device. Participation is voluntary and permissionless. Individuals and organizations can choose
+          whether mining is economically sensible for them.
+        </p>
+<h3>7.1 CPU Mining</h3>
+<p>
+          During the early phase, miners can participate with multi-core CPUs and modest power usage. This phase favors
+          technically inclined individuals rather than large capital pools.
+        </p>
+<h3>7.2 GPU Mining</h3>
+<p>
+          GPU mining introduces higher performance and power requirements, but still uses accessible consumer hardware.
+          This phase is well-suited for hobbyists, small mining farms, and early infrastructure builders.
+        </p>
+<h3>7.3 ASIC Mining</h3>
+<p>
+          If ASICs emerge, they will likely be operated by more specialized mining entities. RTNC remains neutral: the
+          protocol neither encourages nor discourages this; it simply maintains consistent rules while hashpower
+          evolves.
+        </p>
+</section>
+<section>
+<h2>8. Miner Incentives and Limitations</h2>
+<p>
+          Miners are incentivized through block rewards and transaction fees. These are the only protocol-defined
+          incentives. There are no extra bonuses, tax redistributions, or embedded reward multipliers in RTNC’s mining
+          logic.
+        </p>
+<p>
+          Miners do not receive governance rights by default, and owning mining hardware does not grant special
+          authority over protocol rules.
+        </p>
+</section>
+<section>
+<h2>9. Network Security Considerations</h2>
+<p>
+          RTNC’s security comes from the cost of reorganizing the chain. As hashpower increases, it becomes more
+          expensive to attack the network. The evolving phases (CPU → GPU → ASIC) are expected to increase total
+          security over time as more hashpower joins.
+        </p>
+<p>
+          The protocol does not include explicit penalties (such as slashing) because proof-of-work already imposes a
+          natural economic cost on malicious actors: wasted electricity and hardware time.
+        </p>
+</section>
+<section>
+<h2>10. Legal Alignment</h2>
+<p>
+          RTNC mining is designed to remain compatible with non-security treatment. Miners are not promised returns,
+          yield, or profit by the protocol or by the RTNC Foundation. They independently decide whether to mine, at
+          their own cost and risk.
+        </p>
+<p>
+          The mining process is competitive work, not an investment contract.
+        </p>
+</section>
+<section>
+<h2>11. Long-Term Outlook</h2>
+<p>
+          Over time, RTNC aims to be a stable proof-of-work chain with clear rules, a transparent emission curve, and a
+          mining ecosystem that grows or shrinks based on real-world economics rather than protocol gimmicks.
+        </p>
+<p>
+          Mining exists to secure the network and distribute RTNC, not to operate as a financial product or yield
+          mechanism.
+        </p>
+</section>
+</main>
+</div>
+</body>
+</html>

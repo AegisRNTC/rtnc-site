@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>RTNC Whitepaper v1.0</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="docs.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="docs-wrapper">
+
+<aside class="docs-sidebar">
+<div class="docs-logo">RTNC</div>
+<div class="docs-subtitle">Retinecy Network – Documentation</div>
+<div class="docs-nav-section-title">Core Docs</div>
+<ul class="docs-nav">
+<li><a class="active" href="whitepaper.html">Whitepaper</a></li>
+<li><a href="mining.html">Mining Paper</a></li>
+<li><a href="governance.html">Governance Charter</a></li>
+<li><a href="bylaws.html">Foundation Bylaws</a></li>
+</ul>
+<div class="docs-nav-section-title">Guides</div>
+<ul class="docs-nav">
+<li><a href="node-mining-quickstart.html">Node &amp; Mining Quickstart</a></li>
+<li><a href="testnet-setup.html">Testnet &amp; Regtest Setup</a></li>
+<li><a href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<div class="docs-nav-section-title">Reference</div>
+<ul class="docs-nav">
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="glossary.html">Glossary</a></li>
+<li><a href="dev-overview.html">Developer Overview</a></li>
+<li><a href="architecture.html">Architecture</a></li>
+<li><a href="downloads.html">Downloads</a></li>
+</ul>
+<div class="docs-nav-section-title">Navigation</div>
+<ul class="docs-nav">
+<li><a href="index.html">Docs Home</a></li>
+<li><a href="../index.html">← Back to Main Site</a></li>
+</ul>
+<p class="docs-meta">
+    RTNC Core Documentation • Non-financial, protocol and governance references.
+  </p>
+</aside>
+
+<main class="docs-main">
+<header class="docs-main-header">
+<h1>RTNC Whitepaper v1.0</h1>
+<p>Fair-launch proof-of-work blockchain with a focus on transparency, stability, and legal simplicity.</p>
+</header>
+<section>
+<h2>1. Executive Summary</h2>
+<p>
+          Retinecy Network Coin (RTNC) is a fair-launch, open-source, proof-of-work blockchain designed to be a
+          transparent and predictable digital utility. There is no premine, no insider allocation, no token sale, and
+          no staking or yield programs. The protocol does not promise profit, yield, or price performance.
+        </p>
+<p>
+          RTNC is built as a long-term public infrastructure project: a chain that aims to be boring, consistent, and
+          honest, instead of speculative and opaque.
+        </p>
+</section>
+<section>
+<h2>2. Introduction</h2>
+<p>
+          Most blockchains claim transparency, but many hide complex token games, insider allocations, or governance
+          capture behind technical language. RTNC takes the opposite approach: the economics are simple, the rules are
+          fixed, and the governance is strictly limited to documentation and tooling.
+        </p>
+<p>
+          RTNC is not a financial product. It is a decentralized protocol that anyone can mine, use, or build on. The
+          design goal is long-term trust built through understandable rules, not marketing.
+        </p>
+</section>
+<section>
+<h2>3. Core Principles</h2>
+<h3>3.1 Fairness</h3>
+<p>
+          RTNC launches without a premine, without early access, and without private mining periods. The first block is
+          mined under the same rules every later miner will follow. No special privilege is granted based on capital,
+          connections, or status.
+        </p>
+<h3>3.2 Transparency</h3>
+<p>
+          The protocol and ecosystem are designed so that key behaviors are easy to inspect: emission, mining
+          distribution, governance discussions, and foundation activities. Hidden mechanisms are intentionally avoided.
+        </p>
+<h3>3.3 Simplicity</h3>
+<p>
+          The protocol avoids complex economic games like rebasing, bonding curves, synthetic yields, or embedded
+          derivatives. A simpler protocol is easier to reason about, harder to manipulate, and more resilient over time.
+        </p>
+<h3>3.4 Longevity</h3>
+<p>
+          RTNC is designed to run for decades. The emphasis is on steady emission, sustainable mining, and governance
+          structures that do not depend on hype or short-term speculation.
+        </p>
+</section>
+<section>
+<h2>4. System Architecture</h2>
+<p>
+          RTNC is structured into several conceptual layers. These are not separate products; they are different
+          perspectives on how the system is organized.
+        </p>
+<h3>4.1 Layer 0 – Base Rules</h3>
+<p>
+          Layer 0 defines the core rules of the protocol: consensus, emission schedule, block timing, transaction
+          validation, and script behavior. These rules are not subject to governance votes and are intended to remain
+          stable.
+        </p>
+<h3>4.2 Layer 1 – Core Network</h3>
+<p>
+          The core network layer handles peer-to-peer communication, block propagation, mempool behavior, and basic
+          wallet interaction. This is the “plumbing” that keeps nodes connected and synchronized.
+        </p>
+<h3>4.3 Layer 2 – Transparency Stack</h3>
+<p>
+          Above the core network, RTNC emphasizes a set of transparency tools: block explorers, hash distribution
+          monitors, risk metrics (such as RMNSI v2), and stability indicators (such as EMAVP v2). These tools do not
+          control the chain; they expose how it is behaving.
+        </p>
+<h3>4.4 Layer 3 – Ecosystem Layer</h3>
+<p>
+          Applications built on top of RTNC live at this layer: wallets, merchant tools, research dashboards, and other
+          utilities. RTNC does not give protocol-level advantages to any ecosystem participant.
+        </p>
+<h3>4.5 Layer 4 – Governance Layer</h3>
+<p>
+          Human governance, including documentation, proposal handling, and non-profit foundation operations, is
+          considered the outermost layer. Governance can help coordinate and explain the protocol, but it cannot change
+          tokenomics or consensus rules.
+        </p>
+</section>
+<section>
+<h2>5. Consensus Mechanism</h2>
+<p>
+          RTNC uses proof-of-work with a target block time of ten minutes. Nodes compete to find a hash below a
+          difficulty target, and the longest valid chain is considered canonical. Difficulty adjusts over time to keep
+          block times near the target.
+        </p>
+<p>
+          The consensus mechanism does not include staking, slashing, governance voting, or financial redistribution
+          beyond block rewards and transaction fees.
+        </p>
+</section>
+<section>
+<h2>6. Emission and Supply</h2>
+<p>
+          RTNC has a fixed maximum supply of 10,000,000,000 RTNC. New coins are introduced through block rewards
+          according to a predefined emission schedule. Emission decays over time in a smooth, predictable way to avoid
+          sharp halving shocks.
+        </p>
+<p>
+          The emission schedule cannot be manually altered by governance, the foundation, or developers.
+        </p>
+</section>
+<section>
+<h2>7. Mining Phases</h2>
+<p>
+          To balance fairness and long-term security, RTNC mining is conceptually divided into three phases:
+          CPU-focused early mining, GPU-dominant growth, and eventual ASIC security.
+        </p>
+<h3>7.1 CPU Phase</h3>
+<p>
+          The initial phase favors CPU mining to lower the entry barrier and distribute supply more widely. This period
+          is intended to last roughly eighteen months, depending on real-world conditions and software maturity.
+        </p>
+<h3>7.2 GPU Phase</h3>
+<p>
+          As the network grows, GPU miners are expected to take over due to higher hash rates and efficiency. This
+          naturally increases chain security while still allowing participation from non-industrial miners.
+        </p>
+<h3>7.3 ASIC Phase</h3>
+<p>
+          Over the long term, specialized hardware (ASICs) may emerge and dominate hashing. At that stage, RTNC inherits
+          the same kind of industrial security profile found in other mature proof-of-work chains.
+        </p>
+</section>
+<section>
+<h2>8. Governance Model</h2>
+<p>
+          Governance in RTNC is deliberately narrow. It manages documentation, software coordination, and transparency
+          tools, but does not control protocol economics or token distribution.
+        </p>
+<p>
+          Governance uses open discussion and rough consensus rather than token-weighted voting. Ownership of RTNC
+          tokens does not grant formal governance authority.
+        </p>
+</section>
+<section>
+<h2>9. Transparency Systems</h2>
+<p>
+          RTNC’s transparency systems are designed to make the network’s behavior easy to inspect without creating new
+          financial features. Examples include:
+        </p>
+<ul>
+<li>Block explorers that show blocks, transactions, and fees.</li>
+<li>Hash distribution monitors to highlight miner concentration.</li>
+<li>RMNSI v2 to track network health and decentralization risk.</li>
+<li>EMAVP v2 to expose timing and volatility characteristics.</li>
+</ul>
+<p>
+          These are information tools only. They do not manage funds or intervene in protocol behavior.
+        </p>
+</section>
+<section>
+<h2>10. RTNC Foundation</h2>
+<p>
+          The RTNC Foundation is a non-profit organization intended to support the ecosystem. It can fund open-source
+          development, infrastructure, audits, and documentation. It cannot control user funds, adjust token supply, or
+          guarantee financial returns.
+        </p>
+</section>
+<section>
+<h2>11. Ecosystem and Use Cases</h2>
+<p>
+          RTNC can be used as digital cash, a settlement layer, a timestamping tool, or a base for research and
+          experimentation. The protocol does not enforce a specific use case or business model.
+        </p>
+<p>
+          RTNC does not promise profit, passive income, or a particular price trajectory. Any economic value that
+          emerges is a side effect of real-world usage and market behavior, not a goal encoded into the protocol.
+        </p>
+</section>
+<section>
+<h2>12. Legal Classification</h2>
+<p>
+          RTNC is structured to avoid classification as a security. There are no token sales, no investor pools, no
+          profit-sharing agreements, and no promises of yield. The protocol is non-custodial, and users hold their own
+          keys.
+        </p>
+</section>
+<section>
+<h2>13. Philosophy and Long-Term Vision</h2>
+<p>
+          The core philosophy behind RTNC is that a system that cannot lie does not need to be loud, flashy, or clever
+          to survive. Over the long term, consistent and understandable behavior is more trustworthy than aggressive
+          marketing or complex token engineering.
+        </p>
+<p>
+          RTNC aims to be the chain that quietly does the right thing, year after year, without needing to bend rules or
+          overpromise what it can deliver.
+        </p>
+</section>
+</main>
+</div>
+</body>
+</html>

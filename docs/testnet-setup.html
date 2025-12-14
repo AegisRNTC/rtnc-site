@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>RTNC Testnet &amp; Regtest Setup</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="docs.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="docs-wrapper">
+<aside class="docs-sidebar">
+<div class="docs-logo">RTNC</div>
+<div class="docs-subtitle">Retinecy Network Coin – Documentation</div>
+<div class="docs-nav-section-title">Core Docs</div>
+<ul class="docs-nav">
+<li><a href="whitepaper.html">Whitepaper</a></li>
+<li><a href="mining.html">Mining Paper</a></li>
+<li><a href="governance.html">Governance Charter</a></li>
+<li><a href="bylaws.html">Foundation Bylaws</a></li>
+</ul>
+<div class="docs-nav-section-title">Guides</div>
+<ul class="docs-nav">
+<li><a href="node-mining-quickstart.html">Node &amp; Mining Quickstart</a></li>
+<li><a class="active" href="testnet-setup.html">Testnet &amp; Regtest Setup</a></li>
+</ul>
+<div class="docs-nav-section-title">Resources</div>
+<ul class="docs-nav">
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="glossary.html">Glossary</a></li>
+<li><a href="dev-overview.html">Developer Overview</a></li>
+<li><a href="architecture.html">Architecture</a></li>
+<li><a href="troubleshooting.html">Troubleshooting</a></li>
+<li><a href="downloads.html">Downloads</a></li>
+</ul>
+<div class="docs-nav-section-title">Navigation</div>
+<ul class="docs-nav">
+<li><a href="index.html">Docs Home</a></li>
+<li><a href="../index.html">← Back to Main Site</a></li>
+</ul>
+<p class="docs-meta">
+        RTNC 2.0 Documentation • Draft v1.x<br/>
+        Informational only – not financial advice.
+      </p>
+</aside>
+<main class="docs-main"><header class="docs-main-header"><h1>RTNC Testnet &amp; Regtest Setup Guide</h1><p>How to configure and use RTNC Testnet and Regtest environments in a safe, non-production context.</p></header><section><h2>1. Overview</h2><p>RTNC provides multiple network modes for learning, experimentation, development, and safe testing. These environments behave similarly to mainnet but do not reflect real-world conditions.</p><p>Units in these networks are:</p><ul><li>for testing only</li><li>not intended for external use</li><li>separate from mainnet operation</li></ul><p>This guide explains how to configure, run, and interact with Testnet and Regtest environments.</p></section><section><h2>2. Types of Networks</h2><p>Mainnet (Permanent Network)</p><p>The live RTNC network. All activity is irreversible once confirmed.</p><p>Use only after becoming comfortable with Testnet and Regtest.</p><p>Testnet (Public Testing Network)</p><p>A public environment designed to replicate mainnet behavior while allowing safe experimentation.</p><p>Typical uses include:</p><ul><li>testing wallet behavior</li><li>multi-node interactions</li><li>transaction propagation</li><li>mining configuration and software checks</li><li>instant block generation</li><li>reproducible scenarios</li><li>isolated testing</li><li>ideal for automation and script development</li></ul><p>Testnet units exist solely for testing and do not interact with external platforms.</p><p>Regtest (Local Development Network)</p><p>A private, controlled environment running entirely on your own machine.</p><p>Benefits include:</p><p>Regtest units are for local experimentation only.</p></section><section><h2>3. Enabling Testnet or Regtest</h2><p>RTNC Core uses the configuration file rtnc.conf.</p><p>Edit or create the file in:</p><ul><li>Windows: %APPDATA%\RTNC\rtnc.conf</li><li>macOS/Linux: ~/.rtnc/rtnc.conf</li></ul><p>To enable Testnet:</p><p>testnet=1</p><p>To enable Regtest:</p><p>regtest=1</p><p>Restart rtncd after updating configuration.</p></section><section><h2>4. Obtaining Testnet Units</h2><p>Testnet units are used only for experimentation.</p><p>Common methods:</p></section><section><h2>4.1 Testnet Faucet</h2><p>Public faucets may provide small amounts of test units for development.</p><p>These units function only within the Testnet environment.</p></section><section><h2>4.2 Mining on Testnet</h2><p>Mining on Testnet is useful for learning how mining software behaves.</p><p>To view node mining info:</p><p>rtnc-cli getmininginfo</p></section><section><h2>4.3 Viewing Balances</h2><p>rtnc-cli getwalletinfo</p></section><section><h2>5. Working With Regtest</h2><p>Regtest allows complete control over block creation.</p></section><section><h2>5.1 Generating Blocks</h2><p>To generate one block:</p><p>rtnc-cli generatetoaddress 1 &lt;youraddress&gt;</p><p>To generate 101 blocks:</p><p>rtnc-cli generatetoaddress 101 &lt;youraddress&gt;</p><p>These commands:</p><ul><li>create blocks locally</li><li>advance the chain immediately</li><li>assign resulting regtest units to the provided address</li></ul><p>This is useful for development, testing transactions, and simulating confirmations.</p></section><section><h2>6. Switching Between Networks</h2><p>Each network maintains its own data directory.</p><p>It is recommended to keep environments separate.</p><p>Example configuration directories:</p><ul><li>Mainnet: ~/.rtnc/</li><li>Testnet: ~/.rtnc/testnet3/</li><li>Regtest: ~/.rtnc/regtest/</li></ul><p>Switch networks by adjusting rtnc.conf and restarting the node.</p></section><section><h2>7. Troubleshooting</h2><p>Node not starting?</p><p>Check configuration for conflicting parameters.</p><p>No peers on Testnet?</p><p>Ensure outbound connections are allowed.</p><p>Cannot generate blocks on Regtest?</p><p>Verify regtest=1 is enabled.</p><p>Wallet not showing units?</p><p>Ensure you are checking the correct network environment.</p></section><section><h2>8. Summary</h2><p>Testnet and Regtest allow safe, predictable experimentation with RTNC.</p><p>Use Regtest for rapid, isolated development and Testnet for real-world-like behavior.</p><p>Move to mainnet only after gaining confidence in your setup and understanding of the protocol.</p></section></main>
+</div>
+</body>
+</html>

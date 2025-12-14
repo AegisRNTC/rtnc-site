@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>RTNC Node &amp; Mining Quickstart</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="docs.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="docs-wrapper">
+<aside class="docs-sidebar">
+<div class="docs-logo">RTNC</div>
+<div class="docs-subtitle">Retinecy Network Coin – Documentation</div>
+<div class="docs-nav-section-title">Core Docs</div>
+<ul class="docs-nav">
+<li><a href="whitepaper.html">Whitepaper</a></li>
+<li><a href="mining.html">Mining Paper</a></li>
+<li><a href="governance.html">Governance Charter</a></li>
+<li><a href="bylaws.html">Foundation Bylaws</a></li>
+</ul>
+<div class="docs-nav-section-title">Guides</div>
+<ul class="docs-nav">
+<li><a class="active" href="node-mining-quickstart.html">Node &amp; Mining Quickstart</a></li>
+<li><a href="testnet-setup.html">Testnet &amp; Regtest Setup</a></li>
+</ul>
+<div class="docs-nav-section-title">Resources</div>
+<ul class="docs-nav">
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="glossary.html">Glossary</a></li>
+<li><a href="dev-overview.html">Developer Overview</a></li>
+<li><a href="architecture.html">Architecture</a></li>
+<li><a href="troubleshooting.html">Troubleshooting</a></li>
+<li><a href="downloads.html">Downloads</a></li>
+</ul>
+<div class="docs-nav-section-title">Navigation</div>
+<ul class="docs-nav">
+<li><a href="index.html">Docs Home</a></li>
+<li><a href="../index.html">← Back to Main Site</a></li>
+</ul>
+<p class="docs-meta">
+        RTNC 2.0 Documentation • Draft v1.x<br/>
+        Informational only – not financial advice.
+      </p>
+</aside>
+<main class="docs-main"><header class="docs-main-header"><h1>RTNC Node &amp; Mining Quickstart</h1><p>Step-by-step guide for running an RTNC node and experimenting with mining in a non-financial, technical context.</p></header><section><h2>1. Overview</h2><p>This guide explains how to run an RTNC node and optionally perform mining for testing and learning. Mining in RTNC is a computational process that uses electricity and hardware resources; it is presented here for technical understanding only.</p></section><section><h2>2. What You Need</h2><ul><li>A computer running Windows, macOS, or Linux</li><li>Reliable internet connection</li><li>RTNC Core software (once publicly released)</li><li>Basic familiarity with command-line tools is helpful but not required</li></ul></section><section><h2>3. Choosing a Network</h2><p>RTNC provides multiple networks used for different purposes:</p><p>Testnet</p><p>A public testing environment that behaves similarly to mainnet but without irreversible outcomes. Suitable for learning, experimentation, and multi-node behavior.</p><p>Regtest</p><p>A fully controlled local network. You can create blocks instantly, test scripts, and simulate complex scenarios without affecting other users.</p><p>Mainnet</p><p>The permanent network. Actions on mainnet are irreversible and should only be performed after gaining experience on Testnet or Regtest.</p></section><section><h2>4. Installing RTNC Core</h2><p>Once binaries are available:</p></section><section><h2>1. Download the correct version for your operating system.</h2></section><section><h2>2. Verify file integrity using published checksums.</h2></section><section><h2>3. Install according to platform instructions.</h2><p>Running rtncd starts the node.</p><p>Running rtnc-cli help lists all available commands.</p></section><section><h2>5. First Run: Syncing the Blockchain</h2><p>When starting RTNC Core for the first time:</p><ul><li>The node connects to peers.</li><li>It downloads and verifies all blocks.</li><li>This may take time depending on hardware and connection speed.</li></ul><p>You can check progress with:</p><p>rtnc-cli getblockchaininfo</p><p>A fully synced node will show the latest block height.</p></section><section><h2>6. Basic Configuration</h2><p>RTNC uses a configuration file typically placed in:</p><ul><li>Windows: %APPDATA%\RTNC\rtnc.conf</li><li>Linux/macOS: ~/.rtnc/rtnc.conf</li></ul><p>Useful settings:</p><p>server=1</p><p>rpcuser=&lt;yourusername&gt;</p><p>rpcpassword=&lt;yourpassword&gt;</p><p>testnet=1         # optional</p><p>txindex=1         # enable full transaction indexing</p><p>Restart the node after changing configuration.</p></section><section><h2>7. Wallet Basics</h2><p>The built-in wallet allows creating and managing RTNC addresses.</p><p>Key points:</p><ul><li>Write down recovery phrases or private keys and store them securely.</li><li>Do not share private keys.</li><li>Back up your wallet regularly.</li></ul><p>To check the wallet:</p><p>rtnc-cli getwalletinfo</p><p>To generate an address:</p><p>rtnc-cli getnewaddress</p></section><section><h2>8. Sending and Receiving Transactions</h2><p>Transactions move RTNC units between protocol conditions.</p><p>To send:</p><p>rtnc-cli sendtoaddress &lt;address&gt; &lt;amount&gt;</p><p>Transactions first enter the mempool and are confirmed once included in a block.</p></section><section><h2>9. Mining Overview</h2><p>Mining is a technical activity where software performs proof-of-work computation to propose new blocks. It contributes to protocol operation and network consistency.</p><p>Mining can be done:</p><ul><li>Locally (CPU/GPU software)</li><li>Through external mining tools</li><li>In controlled environments such as Regtest for testing</li></ul><p>For Testnet and Mainnet, use experienced tools and test configurations thoroughly before extended operation.</p></section><section><h2>10. Mining on Regtest</h2><p>Regtest lets you generate blocks instantly for development and testing.</p><p>To generate 1 block:</p><p>rtnc-cli generatetoaddress 1 &lt;youraddress&gt;</p><p>To generate 100 blocks:</p><p>rtnc-cli generatetoaddress 100 &lt;youraddress&gt;</p><p>This is useful for:</p><ul><li>Testing transactions</li><li>Simulating confirmations</li><li>Script development</li><li>Rapid prototyping</li></ul><p>Regtest activity does not affect Testnet or Mainnet.</p></section><section><h2>11. Mining on Testnet</h2><p>Testnet behaves similarly to mainnet but is separate and experimental.</p><p>Common uses:</p><ul><li>Learning how mining software works</li><li>Observing block propagation</li><li>Testing hardware and configurations</li></ul><p>Testnet activity is reversible only through new blocks; no real-world implications.</p></section><section><h2>12. Mining on Mainnet (Advanced Users Only)</h2><p>Mainnet operation should only be attempted after:</p><ul><li>Understanding configuration</li><li>Practicing on Regtest</li><li>Running on Testnet successfully</li></ul><p>Mainnet actions are permanent.</p><p>Careful configuration is essential to avoid unintended transactions or node misbehavior.</p></section><section><h2>13. Monitoring Node Status</h2><p>Useful commands:</p><p>rtnc-cli getnetworkinfo</p><p>rtnc-cli getmininginfo</p><p>rtnc-cli getpeerinfo</p><p>For logs:</p><ul><li>Linux/macOS: ~/.rtnc/debug.log</li><li>Windows: %APPDATA%\RTNC\debug.log</li></ul></section><section><h2>14. Troubleshooting</h2><ul><li>Node not syncing → check internet &amp; firewall rules.</li><li>Low peer count → verify ports and configuration.</li><li>RPC errors → confirm rpcuser/rpcpassword settings.</li><li>Blocks not generating on Regtest → ensure Regtest mode is enabled.</li></ul><p>A dedicated Troubleshooting page provides more details.</p></section><section><h2>15. Summary</h2><p>Running an RTNC node or experimenting with mining provides a technical understanding of the protocol. Begin with Regtest or Testnet, become familiar with node behavior, and move to mainnet only after you are confident in configuration and operation.</p></section></main>
+</div>
+</body>
+</html>

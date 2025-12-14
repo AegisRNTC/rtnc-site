@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Retinecy Network (RTNC)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- =========================
+     FAVICONS – RTNC Identity
+     ========================= -->
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+
+<!-- Apple touch icon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+
+<!-- Android / PWA icons -->
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="icon" type="image/png" sizes="256x256" href="/favicon-256.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
+
+<!-- Theme color for mobile browsers -->
+<meta name="theme-color" content="#020617">
+
+</head>
+<body>
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Logo block -->
+      <a href="/" class="logo" aria-label="Retinecy home">
+        <div class="logo-mark">
+          <!-- Optional small static coin icon later -->
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Retinecy</span>
+          <span class="logo-ticker">RTNC</span>
+        </div>
+      </a>
+
+      <!-- Primary navigation -->
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="transparency.html">Transparency</a></li>
+          <li><a href="docs/index.html">Documents</a></li>
+          <li><a href="https://github.com/RETINECY_PLACEHOLDER" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="#donations">Donations</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main>
+
+    <!-- ===== HERO SECTION (TITLE + COIN) ===== -->
+    <section id="hero" class="hero-section">
+      <div class="container">
+
+        <div class="hero-layout">
+          <!-- LEFT: text -->
+          <div class="hero-copy">
+            <p class="hero-kicker">
+              Retinecy Network Coin • RTNC 2.0
+            </p>
+
+            <h1>
+              A transparency-first network with publicly verifiable rules.
+            </h1>
+
+            <p class="hero-subtitle">
+              RTNC is built to resist hidden rules and unaccountable control — the protocol,
+	      documentation, and governance framework are published for public review.
+            </p>
+
+            <p class="hero-links">
+              <a href="#genesis">View Genesis Block</a>
+              &nbsp;·&nbsp;
+              <a href="docs.html">Open Documentation</a>
+            </p>
+          </div>
+
+          <!-- RIGHT: coin + genesis meta -->
+          <div class="hero-coin-wrap">
+            <div class="hero-coin-circle" aria-hidden="true">
+              <svg
+                viewBox="0 0 220 220"
+                class="hero-coin-svg"
+                role="img"
+                aria-label="Retinecy Network Coin"
+              >
+                <defs>
+                  <!-- Outer gold ring -->
+                  <radialGradient id="coinOuter" cx="30%" cy="20%" r="70%">
+                    <stop offset="0%" stop-color="#fefce8" />
+                    <stop offset="35%" stop-color="#facc15" />
+                    <stop offset="70%" stop-color="#92400e" />
+                    <stop offset="100%" stop-color="#0f172a" />
+                  </radialGradient>
+
+                  <!-- Inner dark metal -->
+                  <radialGradient id="coinInner" cx="30%" cy="20%" r="70%">
+                    <stop offset="0%" stop-color="#e5e7eb" />
+                    <stop offset="40%" stop-color="#9ca3af" />
+                    <stop offset="80%" stop-color="#020617" />
+                    <stop offset="100%" stop-color="#000000" />
+                  </radialGradient>
+
+                  <!-- Shield gradient -->
+                  <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#a7f3d0" />
+                    <stop offset="100%" stop-color="#22c55e" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Background -->
+                <circle cx="110" cy="110" r="108" fill="#020617" />
+
+                <!-- Outer ring -->
+                <circle cx="110" cy="110" r="102" fill="url(#coinOuter)" />
+
+                <!-- Inner disc -->
+                <circle
+                  cx="110"
+                  cy="110"
+                  r="78"
+                  fill="url(#coinInner)"
+                  stroke="rgba(15,23,42,0.9)"
+                  stroke-width="1.5"
+                />
+
+                <!-- Subtle highlight ring -->
+                <circle
+                  cx="110"
+                  cy="110"
+                  r="88"
+                  fill="none"
+                  stroke="rgba(255,255,255,0.25)"
+                  stroke-width="1"
+                />
+
+                <!-- Top ring text -->
+                <text
+                  x="110"
+                  y="58"
+                  text-anchor="middle"
+                  font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"
+                  font-size="8"
+                  letter-spacing="2"
+                  fill="#d7fbe8"
+                  font-weight="600"
+		  style="text-shadow: 0 0 3px rgba(0,0,0,0.7);"
+                >
+                  RETINECY • NETWORK • COIN
+                </text>
+
+                <!-- Bottom ring text -->
+                <text
+                  x="110"
+                  y="174"
+                  text-anchor="middle"
+                  font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"
+                  font-size="8"
+                  letter-spacing="2"
+                  fill="#d7fbe8"
+                  font-weight="500"
+		  style="text-shadow: 0 0 3px rgba(0,0,0,0.7);"
+                >
+                  ETHOS VERIFIED • RTNC
+                </text>
+
+                <!-- Shield outline -->
+                <path
+                  d="M110 75 L135 84 L135 115 C135 130 124 143 110 147 C96 143 85 130 85 115 L85 84 Z"
+                  fill="#020617"
+                  stroke="#22c55e"
+                  stroke-width="2"
+                />
+
+                <!-- Shield inner fill -->
+                <path
+                  d="M110 80 L130 87 L130 114 C130 126 121 136 110 139 C99 136 90 126 90 114 L90 87 Z"
+                  fill="url(#shieldGrad)"
+                />
+
+                <!-- Central RTNC "R" -->
+                <text
+                  x="110"
+                  y="116"
+                  text-anchor="middle"
+                  font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"
+                  font-size="32"
+                  fill="#e5fdf5"
+                  letter-spacing="2"
+                  font-weight="700"
+                >
+                  R
+                </text>
+
+                <!-- Tiny "RTNC" under shield -->
+                <text
+                  x="110"
+                  y="138"
+                  text-anchor="middle"
+                  font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"
+                  font-size="10"
+                  letter-spacing="3"
+                  fill="#b7ffe1"
+                  font-weight="700"
+		  style="text-shadow: 0 0 3px rgba(0,0,0,0.9);"
+                >
+                  RTNC
+                </text>
+              </svg>
+            </div>
+
+            <div class="hero-coin-meta">
+              <div class="hero-coin-meta-label">
+                Genesis Block Address
+              </div>
+
+              <code class="hero-coin-meta-address">
+                rtnc1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+              </code>
+
+              <p class="hero-coin-meta-caption">
+                Ceremonial 1&nbsp;RTNC genesis output.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ===== GENESIS BLOCK SECTION ===== -->
+    <section id="genesis" class="section-genesis">
+      <div class="container">
+        <div class="genesis-card">
+          <div class="genesis-header">
+            <p class="genesis-kicker">RTNC GENESIS BLOCK</p>
+            <h2>Ceremonial 1&nbsp;RTNC Genesis Block</h2>
+            <p class="genesis-subtitle">
+              Symbolic launch block used for documentation, ceremony, and testing while the final
+              mainnet parameters are being finalized.
+            </p>
+          </div>
+
+          <div class="genesis-meta-grid">
+            <div class="genesis-meta">
+              <div class="genesis-label">Height</div>
+              <div class="genesis-value">0</div>
+            </div>
+            <div class="genesis-meta">
+              <div class="genesis-label">Timestamp</div>
+              <div class="genesis-value">TBD – Mainnet launch ceremony</div>
+            </div>
+            <div class="genesis-meta">
+              <div class="genesis-label">Block Hash</div>
+              <div class="genesis-value monospace">
+                0000000000000000… (ceremonial placeholder)
+              </div>
+            </div>
+            <div class="genesis-meta">
+              <div class="genesis-label">Merkle Root</div>
+              <div class="genesis-value monospace">
+                0000000000000000… (1&nbsp;RTNC output)
+              </div>
+            </div>
+          </div>
+
+          <div class="genesis-coinbase">
+            <div class="genesis-label">Coinbase Message</div>
+            <p class="genesis-coinbase-text">
+              “Ceremonial 1&nbsp;RTNC genesis, dedicated to the original cypherpunk who proved it was possible.”
+            </p>
+          </div>
+
+          <div class="genesis-actions">
+            <a href="docs/genesis-block.html" class="btn btn-outline">
+              Open Genesis Block Documentation
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MISSION / WHY RTNC ===== -->
+    <section id="mission" class="section-mission">
+      <div class="container">
+        <h2>Why RTNC Exists</h2>
+        <p>
+          RTNC is designed to demonstrate that a digital asset can operate
+          transparently, predictably, and fairly without insider allocation,
+          financial engineering, or speculative mechanics.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== CORE PRINCIPLES ===== -->
+    <section id="principles" class="section-principles">
+      <div class="container">
+        <h2>Core Principles</h2>
+        <div class="principles-grid">
+          <article class="principle">
+            <h3>Open Participation</h3>
+            <p>Anyone can mine, run a node, or inspect the chain.</p>
+          </article>
+          <article class="principle">
+            <h3>No Gates</h3>
+            <p>No premine, no insider allocations, no privileged access.</p>
+          </article>
+          <article class="principle">
+            <h3>Transparency</h3>
+            <p>Emission, activity, and governance rules are fully visible.</p>
+          </article>
+          <article class="principle">
+            <h3>Neutrality</h3>
+            <p>RTNC does not promise returns or promote speculation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TRANSPARENCY PREVIEW ===== -->
+    <section id="transparency-preview" class="section-transparency">
+      <div class="container">
+        <h2>Network Transparency at a Glance</h2>
+        <p>
+          The Transparency Dashboard provides real-time views of network
+          activity, mining conditions, and emission progress.
+        </p>
+
+        <div class="transparency-widgets">
+          <div class="widget placeholder-widget">
+            <h3>NetAct Snapshot</h3>
+            <p>Placeholder for NetAct index preview.</p>
+          </div>
+          <div class="widget placeholder-widget">
+            <h3>Hashrate &amp; Difficulty</h3>
+            <p>Placeholder for hashrate and difficulty graph preview.</p>
+          </div>
+          <div class="widget placeholder-widget">
+            <h3>Circulating Supply</h3>
+            <p>Placeholder for emission / CS snapshot.</p>
+          </div>
+        </div>
+
+        <div class="section-actions">
+          <a href="/transparency.html" class="btn btn-outline">
+            Open Full Transparency Dashboard
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MINING & NODES ===== -->
+    <section id="mining" class="section-mining">
+      <div class="container">
+        <h2>Participate in the Network</h2>
+        <div class="mining-grid">
+          <article class="card">
+            <h3>Run a Full Node</h3>
+            <p>
+              Help secure the network by running an RTNC node. Node setup guides
+              cover mainnet, testnet, and regtest environments.
+            </p>
+            <a href="/docs/node-mining-quickstart.html" class="card-link">
+              Node &amp; Mining Quickstart
+            </a>
+          </article>
+
+          <article class="card">
+            <h3>Start Mining</h3>
+            <p>
+              RTNC is a multi-phase proof-of-work chain with CPU, GPU, and ASIC
+              phases. Mining details and parameters are fully documented.
+            </p>
+            <a href="/docs/mining-paper.html" class="card-link">
+              Mining Paper
+            </a>
+          </article>
+
+          <article class="card">
+            <h3>Explore Testnet &amp; Regtest</h3>
+            <p>
+              Developers can experiment safely using RTNC testnet and regtest
+              configurations before deploying to mainnet.
+            </p>
+            <a href="/docs/testnet-regtest.html" class="card-link">
+              Testnet &amp; Regtest Setup
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DOCUMENTATION SHORTCUT ===== -->
+    <section id="documents" class="section-docs">
+      <div class="container">
+        <h2>Documentation</h2>
+        <div class="docs-columns">
+          <div class="docs-column">
+            <h3>Core Docs</h3>
+            <ul>
+              <li><a href="/docs/whitepaper.html">Whitepaper</a></li>
+              <li><a href="/docs/mining-paper.html">Mining Paper</a></li>
+              <li><a href="/docs/governance-charter.html">Governance Charter</a></li>
+              <li><a href="/docs/foundation-bylaws.html">Foundation Bylaws</a></li>
+	      <li><a href="/docs/mining-overview.html">Mining Overview (v1.0)</a></li>
+            </ul>
+          </div>
+          <div class="docs-column">
+            <h3>Guides</h3>
+            <ul>
+              <li><a href="/docs/node-mining-quickstart.html">Node &amp; Mining Quickstart</a></li>
+              <li><a href="/docs/testnet-regtest.html">Testnet &amp; Regtest Setup</a></li>
+              <li><a href="/docs/troubleshooting.html">Troubleshooting</a></li>
+            </ul>
+          </div>
+          <div class="docs-column">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="/docs/faq.html">FAQ</a></li>
+              <li><a href="/docs/glossary.html">Glossary</a></li>
+              <li><a href="/docs/developer-overview.html">Developer Overview</a></li>
+              <li><a href="/docs/protocol-architecture.html">Protocol Architecture</a></li>
+              <li><a href="/docs/downloads.html">Downloads</a></li>
+	      <li><a href="/docs/funding-transparency.html">Funding Transparency Statement</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section-actions">
+          <a href="/docs/index.html" class="btn btn-outline">
+            Open Docs Home
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DOWNLOADS / DONATIONS STUB ===== -->
+    <section id="downloads" class="section-downloads">
+      <div class="container">
+        <h2>Downloads</h2>
+        <p>Placeholder for RTNC Core builds, checksums, and related tools.</p>
+      </div>
+    </section>
+
+    <section id="donations" class="section-donations">
+      <div class="container">
+        <h2>Donations</h2>
+        <p>
+  	  Donations support documentation, tooling, and transparency infrastructure.
+  	  No token sales. No investment. No financial returns.
+	</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p>&copy; <!-- YEAR --> Retinecy Network. All rights reserved.</p>
+        <p class="footer-disclaimer">
+          RTNC is an open-source protocol. This site provides technical and
+          governance documentation and does not offer financial advice.
+        </p>
+      </div>
+      <div class="footer-right">
+        <div class="footer-contact">
+          <h3>Contact</h3>
+          <p><!-- Placeholder for contact email or form link --></p>
+        </div>
+        <div class="footer-social">
+          <h3>Social</h3>
+          <ul>
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">Telegram</a></li>
+            <li><a href="#">X (Twitter)</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

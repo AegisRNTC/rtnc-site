@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>RTNC — Transparency Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="RTNC Transparency Dashboard – live view of network activity, EMAV, hashrate, difficulty, supply, and mining phases."
+  />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            slatebg: "#050608",
+            slatecard: "#0b0f16",
+            rtAccent: "#0f9b8e",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-slatebg text-slate-100 min-h-screen">
+  <!-- HEADER -->
+  <header class="border-b border-slate-800 bg-black/40 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="h-9 w-9 rounded-full border border-slate-600 bg-slate-900"></div>
+        <div class="leading-tight">
+          <div class="text-sm font-semibold tracking-[0.18em] uppercase">
+            Retinecy
+          </div>
+          <div class="text-xs text-slate-400">RTNC Network</div>
+        </div>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <ul class="flex items-center gap-6 text-sm">
+          <li>
+            <a href="index.html"
+               class="text-slate-300 hover:text-white transition-colors">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="transparency.html"
+               class="text-rtAccent font-semibold border-b border-rtAccent pb-0.5">
+              Transparency
+            </a>
+          </li>
+          <li>
+            <a href="docs/index.html"
+               class="text-slate-300 hover:text-white transition-colors">
+              Documents
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-6xl mx-auto px-4 py-8 space-y-8">
+    <!-- Page heading -->
+    <section class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <div>
+        <h1 class="text-2xl md:text-3xl font-semibold tracking-tight">
+          RTNC Transparency Dashboard
+        </h1>
+        <p class="mt-2 text-sm text-slate-400 max-w-2xl">
+          Neutral, factual telemetry for the RTNC network. No price,
+          no ROI language — only protocol and network activity indicators.
+        </p>
+      </div>
+      <div class="text-xs text-slate-500">
+        <div>Last updated: <span class="font-mono">— static demo —</span></div>
+        <div>Network: <span class="font-mono">RTNC mainnet (planned)</span></div>
+      </div>
+    </section>
+
+    <!-- Top two feature cards: NetAct + EMAV -->
+    <section class="grid md:grid-cols-2 gap-6">
+      <!-- NetAct Index -->
+      <article class="rounded-xl border border-slate-800 bg-slatecard p-5">
+        <header class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-sm font-semibold tracking-wide uppercase text-slate-300">
+              NetAct Index
+            </h2>
+            <p class="text-xs text-slate-400 mt-1">
+              Composite network activity indicator (hashrate, nodes, supply, movement).
+            </p>
+          </div>
+          <span class="text-[0.68rem] px-2 py-0.5 rounded-full border border-slate-700 text-slate-400">
+            Neutral gauge
+          </span>
+        </header>
+
+        <div class="flex items-center gap-6">
+          <!-- Simple gauge stand-in -->
+          <div class="relative w-32 h-32 flex items-center justify-center">
+            <div class="absolute inset-0 rounded-full border border-slate-700"></div>
+            <div class="absolute inset-4 rounded-full border border-slate-800"></div>
+            <div class="absolute w-[2px] h-12 bg-rtAccent origin-bottom translate-y-1/2 rotate-0"></div>
+            <div class="relative text-center">
+              <div class="text-2xl font-semibold">0.00</div>
+              <div class="text-[0.65rem] text-slate-400 mt-1">Index value</div>
+            </div>
+          </div>
+
+          <div class="flex-1 space-y-2">
+            <div class="flex items-center justify-between text-xs text-slate-400">
+              <span>Band</span>
+              <span>Range</span>
+            </div>
+            <div class="space-y-1">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400">Low activity</span>
+                <span class="font-mono text-slate-200">0.00 – 0.33</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400">Baseline</span>
+                <span class="font-mono text-slate-200">0.34 – 0.66</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400">Elevated</span>
+                <span class="font-mono text-slate-200">0.67 – 1.00</span>
+              </div>
+            </div>
+            <p class="text-[0.7rem] text-slate-500 pt-2">
+              This index is designed as a <span class="font-semibold">descriptive</span> metric only.
+              It does not imply performance, return, or future conditions.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- EMAV panel -->
+      <article class="rounded-xl border border-slate-800 bg-slatecard p-5">
+        <header class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-sm font-semibold tracking-wide uppercase text-slate-300">
+              EMAV
+            </h2>
+            <p class="text-xs text-slate-400 mt-1">
+              Extended Moving Average metric over selected windows (once exchange data exists).
+            </p>
+          </div>
+          <span class="text-[0.68rem] px-2 py-0.5 rounded-full border border-slate-700 text-slate-400">
+            Concept placeholder
+          </span>
+        </header>
+
+        <div class="space-y-3">
+          <div class="grid grid-cols-3 gap-3 text-center">
+            <div class="rounded-lg border border-slate-800 bg-black/20 px-2 py-3">
+              <div class="text-[0.65rem] text-slate-400 mb-1">Short window</div>
+              <div class="font-mono text-sm text-slate-100">—</div>
+              <div class="text-[0.65rem] text-slate-500 mt-1">e.g. 7–14 days</div>
+            </div>
+            <div class="rounded-lg border border-slate-800 bg-black/20 px-2 py-3">
+              <div class="text-[0.65rem] text-slate-400 mb-1">Mid window</div>
+              <div class="font-mono text-sm text-slate-100">—</div>
+              <div class="text-[0.65rem] text-slate-500 mt-1">e.g. 30–90 days</div>
+            </div>
+            <div class="rounded-lg border border-slate-800 bg-black/20 px-2 py-3">
+              <div class="text-[0.65rem] text-slate-400 mb-1">Long window</div>
+              <div class="font-mono text-sm text-slate-100">—</div>
+              <div class="text-[0.65rem] text-slate-500 mt-1">e.g. 180+ days</div>
+            </div>
+          </div>
+          <p class="text-[0.7rem] text-slate-500">
+            EMAV will be calculated only from transparent, verifiable data sources once RTNC
+            is listed, and is intended as a <span class="font-semibold">volatility context</span>
+            metric — not a signal or recommendation.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Network metrics grid -->
+    <section class="grid lg:grid-cols-3 gap-6">
+      <!-- Hashrate & difficulty -->
+      <article class="rounded-xl border border-slate-800 bg-slatecard p-5">
+        <h2 class="text-sm font-semibold tracking-wide uppercase text-slate-300 mb-2">
+          Hashrate &amp; Difficulty
+        </h2>
+        <p class="text-xs text-slate-400 mb-4">
+          Core mining telemetry. Values shown here are placeholders until RTNC mainnet is live.
+        </p>
+        <div class="space-y-3 text-sm">
+          <div class="flex justify-between">
+            <span class="text-slate-400">Current hashrate</span>
+            <span class="font-mono text-slate-100">0 H/s</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slate-400">24h hashrate trend</span>
+            <span class="font-mono text-slate-100">0%</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slate-400">Current difficulty</span>
+            <span class="font-mono text-slate-100">0</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slate-400">Difficulty trend (14d)</span>
+            <span class="font-mono text-slate-100">0%</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Supply / Emission -->
+      <article class="rounded-xl border border-slate-800 bg-slatecard p-5">
+        <h2 class="text-sm font-semibold tracking-wide uppercase text-slate-300 mb-2">
+          Supply &amp; Emission
+        </h2>
+        <p class="text-xs text-slate-400 mb-4">
+          Hard cap, estimated emission, and circulating supply. Early phases will be dominated
+          by mining distribution.
+        </p>
+        <dl class="space-y-2 text-sm">
+          <div class="flex justify-between">
+            <dt class="text-slate-400">Hard cap</dt>
+            <dd class="font-mono text-slate-100">10,000,000,000 RTNC</dd>
+          </div>
+          <div class="flex justify-between">
+            <dt class="text-slate-400">Estimated mined to date</dt>
+            <dd class="font-mono text-slate-100">0 RTNC</dd>
+          </div>
+          <div class="flex justify-between">
+            <dt class="text-slate-400">Estimated circulating</dt>
+            <dd class="font-mono text-slate-100">0 RTNC</dd>
+          </div>
+          <div class="flex justify-between">
+            <dt class="text-slate-400">Emission progress</dt>
+            <dd class="font-mono text-slate-100">0.00%</dd>
+          </div>
+        </dl>
+      </article>
+
+      <!-- Phase countdown -->
+      <article class="rounded-xl border border-slate-800 bg-slatecard p-5">
+        <h2 class="text-sm font-semibold tracking-wide uppercase text-slate-300 mb-2">
+          Mining Phase Countdown
+        </h2>
+        <p class="text-xs text-slate-400 mb-4">
+          High-level view of where RTNC is in its CPU → GPU → ASIC emission schedule.
+        </p>
+        <div class="space-y-3 text-sm">
+          <div class="flex justify-between">
+            <span class="text-slate-400">Current phase</span>
+            <span class="font-mono text-slate-100">Pre-launch</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slate-400">Blocks until next phase</span>
+            <span class="font-mono text-slate-100">0</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slate-400">Est. time to next phase</span>
+            <span class="font-mono text-slate-100">—</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Block Probability Estimator -->
+    <section class="rounded-xl border border-slate-800 bg-slatecard p-5">
+      <header class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-3">
+        <div>
+          <h2 class="text-sm font-semibold tracking-wide uppercase text-slate-300">
+            Block Probability Estimator
+          </h2>
+          <p class="text-xs text-slate-400 mt-1">
+            Neutral calculation helper: given your hashrate and current network conditions,
+            what is the expected time to find a block on average?
+          </p>
+        </div>
+        <span class="text-[0.68rem] px-2 py-0.5 rounded-full border border-slate-700 text-slate-400">
+          Tool – no guarantees, no advice
+        </span>
+      </header>
+
+      <div class="grid md:grid-cols-3 gap-4 text-sm">
+        <div class="space-y-2">
+          <label class="block text-xs text-slate-400">Your hashrate (H/s)</label>
+          <input
+            type="number"
+            class="w-full rounded-md bg-black/40 border border-slate-700 px-2 py-1.5 text-xs font-mono text-slate-100"
+            placeholder="0"
+            disabled
+          />
+          <p class="text-[0.7rem] text-slate-500">
+            In a future version this will accept real inputs; for now it
+            documents the concept without performing live calculations.
+          </p>
+        </div>
+        <div class="space-y-2">
+          <label class="block text-xs text-slate-400">Network hashrate (H/s)</label>
+          <input
+            type="number"
+            class="w-full rounded-md bg-black/40 border border-slate-700 px-2 py-1.5 text-xs font-mono text-slate-100"
+            placeholder="0"
+            disabled
+          />
+        </div>
+        <div class="space-y-2">
+          <label class="block text-xs text-slate-400">Difficulty</label>
+          <input
+            type="number"
+            class="w-full rounded-md bg-black/40 border border-slate-700 px-2 py-1.5 text-xs font-mono text-slate-100"
+            placeholder="0"
+            disabled
+          />
+        </div>
+      </div>
+
+      <div class="mt-4 border-t border-slate-800 pt-3 text-xs text-slate-500">
+        <p>
+          This estimator will use the standard block-finding probability formulas once RTNC
+          mainnet parameters and live telemetry are available. It is intended purely as an
+          educational and planning tool for miners, not a performance guarantee.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
